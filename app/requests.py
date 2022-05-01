@@ -21,6 +21,8 @@ def get_sources(category):
 	Function that gets the json response to our url request
 	'''
 	get_sources_url = base_url.format(category,api_key)
+	# print(get_sources_url,api_key)
+ 
 
 	with urllib.request.urlopen(get_sources_url) as url:
 		get_sources_data = url.read()
@@ -31,8 +33,10 @@ def get_sources(category):
 		if get_sources_response['sources']:
 			sources_results_list = get_sources_response['sources']
 			sources_results = process_sources(sources_results_list)
+        
 
 	return sources_results
+	
 def process_sources(sources_list):
 	'''
 	Function that processes the news sources results and turns them into a list of objects
@@ -54,7 +58,9 @@ def process_sources(sources_list):
 
 
 		sources_object = Source(id,name,description,url,category,country,language)
+		# print(sources_object)
 		sources_results.append(sources_object)
+    	
 
 
 	return sources_results
