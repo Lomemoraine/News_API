@@ -3,5 +3,15 @@
 </div>
 {% extends 'base.html'%}
 
-{% include 'footer.html' %}
+<body>
+    <!-- general  news -->
+    <h3> General News</h3>
+    <ul>
+       {% for general_news in general%} 
+       <li> {{general_news.name}} </li>
+    </ul>
+    {% endfor %}
+</ul>
+</body>
+
 
