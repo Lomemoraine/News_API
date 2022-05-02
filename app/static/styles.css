@@ -28,3 +28,7 @@ font-family: 'Goldman', cursive; */
     height: 35px;
     margin-top: 10px;
 }
+.cards{
+    width:50%;
+    height:25%;
+}

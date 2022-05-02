@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% include 'header.html' %}
+{% import 'macros.html' as macro%}
+{% block content%}
+<h3 class="text-center"> News sources</h3>
+        <ul>
+            {{ macro.displayArticles(articles)}}
+        </ul>
+
+
+{%endblock%}
