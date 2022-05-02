@@ -67,19 +67,19 @@ def process_sources(sources_list):
 
 
 	return sources_results
-def get_articles(query):
+def get_articles(category):
 	'''
 	Function that processes the articles and returns a list of articles objects
 	'''
-	get_articles_url = "https://newsapi.org/v2/everything?q={}&apiKey={}".format(query,api_key)
-
+	get_articles_url = articles_url.format(category,api_key)
+	print(get_articles_url)
 	with urllib.request.urlopen(get_articles_url) as url:
 		articles_results = json.loads(url.read())
 
          
-		articles_object = None
-		if articles_results['articles']:
-			articles_object = process_articles(articles_results['articles'])
+	articles_object = None
+	if articles_results['articles']:
+		articles_object = process_articles(articles_results['articles'])
 
 	return articles_object
 def process_articles(articles_list):
