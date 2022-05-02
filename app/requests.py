@@ -76,6 +76,7 @@ def get_articles(source_name):
 	with urllib.request.urlopen(get_articles_url) as url:
 		get_data = url.read()
 		get_response = json.loads(get_data)
+		print(get_response)
 
          
 		results = None

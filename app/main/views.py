@@ -26,7 +26,7 @@ def articles(source_name):
     '''
     articles = get_articles(source_name)
     
-    title = f'Articles | {source_name}'
+    title =source_name
     return render_template('article.html',title= title,articles = articles)
 @main.route('/search/<article>')
 def search(article):
