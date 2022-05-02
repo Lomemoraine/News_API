@@ -1,4 +1,4 @@
-# News APp
+# News APP
 ## Author
 
 * Lorraine Chepkemoi
