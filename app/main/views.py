@@ -10,8 +10,8 @@ def index():
     '''
     #Getting general news
     general_news = get_sources('general')
-    print(general_news)
+    business_news = get_sources('business')
     title = "Home _ Welcome to family news Hub"
     
  
-    return render_template('index.html',title = title,general = general_news)
+    return render_template('index.html',title = title,general = general_news,business = business_news)

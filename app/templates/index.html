@@ -1,17 +1,29 @@
-<div class="container-fluid heading1">
-    <h1 class="page-header text-center">Find out what's new Today?<h1>
-</div>
-{% extends 'base.html'%}
-
-<body>
-    <!-- general  news -->
-    <h3> General News</h3>
-    <ul>
-       {% for general_news in general%} 
-       <li> {{general_news.name}} </li>
-    </ul>
-    {% endfor %}
-</ul>
-</body>
-
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the best Movie Review website </title>
+        {% endif %}
+    </head>
+    <body>
+        <body>
+            <!-- Popular movie section  -->
+            <h3> General news</h3>
+             <ul>
+                {% for general_new in general %}
+                    <li>{{ general_new.name}}</li>
+                {% endfor %}
+            </ul>
+            <!-- Upcoming movie  -->
+        <h3> Business News </h3>
+        <ul>
+           {% for business_new in business %}
+               <li>{{ business_new.name}}</li>
+           {% endfor %}
+       </ul>
+     </body>
+    </body>
+</html>
