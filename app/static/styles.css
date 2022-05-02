@@ -1,6 +1,11 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1552058456-adc0aabef0b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlnaHQlMjBibHVlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .heading1 {
 background-color:rgb(0, 217, 255);
-font-family: 'Goldman', cursive;
+font-family: 'Beau Rivage', cursive;
 }
 /* font-family: 'Architects Daughter', cursive;
 font-family: 'Beau Rivage', cursive;

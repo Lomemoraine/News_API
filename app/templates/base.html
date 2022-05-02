@@ -1,5 +1,4 @@
-{% extends 'bootstrap/base.html'%}<!--Replaced the initial coded structure with this line since flask_bootsrap contains it-->
-
+{% extends 'bootstrap/base.html'%}
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
@@ -7,9 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Beau+Rivage&family=Goldman&display=swap" rel="stylesheet">
 {% endblock %}
-<!-- Navbar block ;included here since the navbar will be required by all the other templates --> 
+<!-- Navbar block  --> 
 {% block navbar %}
     {% include 'navbar.html' %}
 {% endblock %}
-
-
