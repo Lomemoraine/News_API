@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_sources,get_articles
+from ..requests import get_sources,get_articles,search_article
 #views
 @main.route('/')
 def index():
@@ -12,6 +12,10 @@ def index():
     general_news = get_sources('general')
     articles = get_articles('business')
     title = "Home _ Welcome to family news Hub"
+    search_article = request.args.get('article_query')
+
+    if search_article:
+        return redirect(url_for('.search',article=search_article))
     
  
     return render_template('index.html',title = title,general = general_news,articles = articles)
@@ -24,6 +28,15 @@ def articles(source_name):
     
     title = f'Articles | {source_name}'
     return render_template('article.html',title= title,articles = articles)
+@main.route('/search/<article>')
+def search(article):
+    searched_articles_list = article.split(" ")
+    article_name_format = "+".join(searched_articles_list)
+    searched_articles = search_article(article_name_format)
+
+    heading = article.upper()
+    
+    return render_template('search.html',searched_articles=searched_articles,heading=heading)
 # @main.route('/article')
 # def articles():
 
