@@ -1,3 +1,5 @@
+
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,21 +11,17 @@
         {% endif %}
     </head>
     <body>
-        <body>
-            <!-- Popular movie section  -->
-            <h3> General news</h3>
-             <ul>
-                {% for general_new in general %}
-                    <li>{{ general_new.name}}</li>
-                {% endfor %}
-            </ul>
-            <!-- Upcoming movie  -->
-        <h3> Business News </h3>
+
+              <!-- Popular movie -->
+        <h3> General_news sources</h3>
         <ul>
-           {% for business_new in business %}
-               <li>{{ business_new.name}}</li>
-           {% endfor %}
-       </ul>
-     </body>
+            {{ macro.displaySourceList(general)}}
+        </ul>
+        <!-- Upcoming movie  -->
+        <h3> Business_news sources </h3>
+        <ul>
+         {{ macro.displaySourceList(business)}}
+        </ul>
+     
     </body>
 </html>

@@ -1,0 +1,6 @@
+{% macro displaySourceList(sources_list) %} <!-- Defining the first macro to avoid repitition in our index.html file-->
+{% for source in sources_list %}
+<li>{{ source.name}}</li
+    {% endfor %}
+
+    {% endmacro %}
