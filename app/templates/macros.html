@@ -1,6 +1,19 @@
 {% macro displaySourceList(sources_list) %} <!-- Defining the first macro to avoid repitition in our index.html file-->
 {% for source in sources_list %}
-<li>{{ source.name}}</li
-    {% endfor %}
-
-    {% endmacro %}
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <h5 class="card-title text-primary">{{source.name}}</h5>
+                <p class="card-text">{{source.description|truncate(200)}}
+                    <a href="{{source.url}}">visit page.</a>
+                </p>
+                <p class="card-text"><small class="text-muted">Source Category:{{source.category}}</small></p>
+                <p class="card-text"><small class="text-muted">Source Country:{{source.country}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+   
