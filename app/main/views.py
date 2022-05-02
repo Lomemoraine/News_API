@@ -15,25 +15,25 @@ def index():
     
  
     return render_template('index.html',title = title,general = general_news,articles = articles)
-# @main.route('/sources/<id>')
-# def articles(id):
-#     '''
-#     view articles page
-#     '''
-#     articles = get_articles(id)
-#     articles_all = get_articles('business')
-#     title = f'Articles | {id}'
-#     return render_template('article.html',title= title,articles = articles,articles_all =articles_all)
-@main.route('/article')
-def articles():
-
+@main.route('/sources/<source_name>')
+def articles(source_name):
     '''
-    View root page function that returns the index page and its data
+    view articles page
     '''
-    #Getting general news
+    articles = get_articles(source_name)
     
-    articles = get_articles('business')
-    title = "Home _ Welcome to family news Hub"
+    title = f'Articles | {source_name}'
+    return render_template('article.html',title= title,articles = articles)
+# @main.route('/article')
+# def articles():
+
+#     '''
+#     View root page function that returns the index page and its data
+#     '''
+#     #Getting general news
+    
+#     articles = get_articles('business')
+#     title = "Home _ Welcome to family news Hub"
     
  
-    return render_template('article.html',title = title,articles = articles)
+#     return render_template('article.html',title = title,articles = articles)

@@ -67,33 +67,35 @@ def process_sources(sources_list):
 
 
 	return sources_results
-def get_articles(category):
+def get_articles(source_name):
 	'''
 	Function that processes the articles and returns a list of articles objects
 	'''
-	get_articles_url = articles_url.format(category,api_key)
+	get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(source_name,api_key)
 	print(get_articles_url)
 	with urllib.request.urlopen(get_articles_url) as url:
-		articles_results = json.loads(url.read())
+		get_data = url.read()
+		get_response = json.loads(get_data)
 
          
-	articles_object = None
-	if articles_results['articles']:
-		articles_object = process_articles(articles_results['articles'])
-
-	return articles_object
+		results = None
+		if get_response['articles']:
+			results_list = get_response['articles']
+			results = process_articles(results_list)
+	return results
+	
 def process_articles(articles_list):
 	'''
 	'''
 	articles_object = []
-	for article_item in articles_list:
-		id = article_item.get('id')
-		author = article_item.get('author')
-		title = article_item.get('title')
-		description = article_item.get('description')
-		url = article_item.get('url')
-		urlToImage = article_item.get('urlToImage')
-		publishedAt = article_item.get('publishedAt')
+	for article in articles_list:
+		id = article.get('id')
+		author = article.get('author')
+		title = article.get('title')
+		description = article.get('description')
+		url = article.get('url')
+		urlToImage = article.get('urlToImage')
+		publishedAt = article.get('publishedAt')
         
 		
 		if urlToImage:

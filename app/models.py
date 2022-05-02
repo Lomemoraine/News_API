@@ -1,4 +1,5 @@
 class Source:
+    sources_list = []
     def __init__(self,id,name,description,url,category,language,country):
         self.id = id
         self.name = name
@@ -12,6 +13,7 @@ class Articles:
     '''
     Articles class to define articles objects
     '''
+    articles_list = []
     def __init__(self,id,author,title,description,url,urlToImage,publishedAt):
         self.id = id
         self.author = author

@@ -8,8 +8,8 @@
                 <p class="card-text">{{source.description|truncate(200)}}
                     <a href="{{source.url}}">visit page.</a>
                 </p>
-                <p class="card-text"><small class="text-muted">Source Category:{{source.category}}</small></p>
-                <p class="card-text"><small class="text-muted">Source Country:{{source.country}}</small></p>
+                <p class="card-text"><small >Source Category:{{source.category}}</small></p>
+                <p class="card-text"><small >Source Country:{{source.country}}</small></p>
                 <a href="/sources/{{source.id}}" class="btn btn-success btn-sm">View Articles</a>
             </div>
         </div>
@@ -17,20 +17,5 @@
 </div>
 {% endfor %}
 {% endmacro %}
-{% macro displayArticles(articles_list) %}
-{% for article in articles_list %}
-<div class="card" style="width: 40rem;background-color:white;padding:25px">
-    <img style="margin-left:30%;border-radius:20px"class="card-img-top cards" src="{{article.urlToImage}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"style="font-size:30px">{{article.title}}</h5>
-      <p class="card-text">{{article.description|truncate(200)}}.</p>
-      <a href="{{article.url}}" class="btn btn-primary">Read More</a>
-      <p class="card-text"><small class="text-muted">Publish Date:{{article.publishedAt}}</small></p>
-      <p class="card-text"><small class="text-muted">By:{{article.author}}</small></p>
-    </div>
-  </div>
 
-{% endfor %}
-    
-{% endmacro %}
    
