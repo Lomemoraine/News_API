@@ -108,6 +108,7 @@ def process_articles(articles_list):
 		return articles_object
 def search_article(article):
     search_article_url = 'https://newsapi.org/v2/everything?q={}&from=2022-04-30&language=en&sortBy=publishedAt&apiKey={}'.format(article,api_key)
+    print(search_article_url)
     with urllib.request.urlopen(search_article_url) as url:
         search_article_data = url.read()
         search_article_response = json.loads(search_article_data)
