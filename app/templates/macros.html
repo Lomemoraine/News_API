@@ -19,10 +19,10 @@
 {% endmacro %}
 {% macro displayArticles(articles_list) %}
 {% for article in articles_list %}
-<div class="card" style="width: 15rem;">
-    <img class="card-img-top cards" src="{{article.urlToImage}}" alt="Card image cap">
+<div class="card" style="width: 40rem;background-color:white;padding:25px">
+    <img style="margin-left:30%;border-radius:20px"class="card-img-top cards" src="{{article.urlToImage}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{article.title}}</h5>
+      <h5 class="card-title"style="font-size:30px">{{article.title}}</h5>
       <p class="card-text">{{article.description|truncate(200)}}.</p>
       <a href="{{article.url}}" class="btn btn-primary">Read More</a>
       <p class="card-text"><small class="text-muted">Publish Date:{{article.publishedAt}}</small></p>
