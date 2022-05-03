@@ -10,7 +10,7 @@ def index():
     '''
     #Getting general news
     general_news = get_sources('general')
-    articles = get_articles('business')
+    # articles = get_articles('business')
     title = "Home _ Welcome to family news Hub"
     search_article = request.args.get('article_query')
 

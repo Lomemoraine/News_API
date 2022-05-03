@@ -68,27 +68,29 @@ def process_sources(sources_list):
 
 	return sources_results
 def get_articles(source_name):
+    
 	'''
 	Function that processes the articles and returns a list of articles objects
 	'''
 	get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(source_name,api_key)
-	print(get_articles_url)
+	print(get_articles_url,source_name)
 	with urllib.request.urlopen(get_articles_url) as url:
 		get_data = url.read()
 		get_response = json.loads(get_data)
-		print(get_response)
+		# print(get_response)
 
          
 		results = None
 		if get_response['articles']:
 			results_list = get_response['articles']
 			results = process_articles(results_list)
+			# print(results)
 	return results
 	
 def process_articles(articles_list):
 	'''
 	'''
-	articles_object = []
+	results = []
 	for article in articles_list:
 		id = article.get('id')
 		author = article.get('author')
@@ -99,16 +101,16 @@ def process_articles(articles_list):
 		publishedAt = article.get('publishedAt')
         
 		
-		if urlToImage:
-			articles_result = Articles(id,author,title,description,url,urlToImage,publishedAt)
-			articles_object.append(articles_result)	
-			print(articles_object)
+		# if urlToImage:
+		articles_object = Articles(id,author,title,description,url,urlToImage,publishedAt)
+		results.append(articles_object)	
+		print(results)
 		
 
-		return articles_object
+	return results
 def search_article(article):
     search_article_url = 'https://newsapi.org/v2/everything?q={}&from=2022-04-30&language=en&sortBy=publishedAt&apiKey={}'.format(article,api_key)
-    print(search_article_url)
+    # print(search_article_url)
     with urllib.request.urlopen(search_article_url) as url:
         search_article_data = url.read()
         search_article_response = json.loads(search_article_data)
