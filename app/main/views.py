@@ -28,16 +28,7 @@ def articles(source_name):
     
     title =source_name
     return render_template('article.html',title= title,articles = articles)
-@main.route('/search/<article>')
-def search(article):
-    searched_articles_list = article.split(" ")
-    article_name_format = "+".join(searched_articles_list)
-    searched_articles = search_article(article_name_format)
 
-    heading = article.upper()
-    
-    return render_template('search.html',searched_articles=searched_articles,heading=heading)
-# @main.route('/article')
 # def articles():
 
 #     '''
