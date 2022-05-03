@@ -15,7 +15,7 @@ font-family: 'Goldman', cursive; */
     font-family: 'Architects Daughter', cursive; 
 }
 .displaysources{
-    padding: 1vh 5vh;
+    padding: 1vh 6vh;
 }
 .social{
     display: flex;
@@ -37,4 +37,11 @@ font-family: 'Goldman', cursive; */
 }
 .titles{
     font-size: 30px;
+}
+.authoring{
+    font-size:20px;
+    color: chocolate;
+}
+.sourcing{
+    padding: 1vh 6vh
 }

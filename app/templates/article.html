@@ -5,20 +5,20 @@
 {% block content %}
 <h3 class="text-center">Articles</h3>
 
-<div class="display-source-articles">
-    <h3 class="main-heading-search text-center">Found {{articles|count}} article in <span
-        class="title-heading-search">{{title}}</span></h3>
+<div class="sourcing">
+    <h3 class="text-center">There are  {{articles|count}} articles found  in <span
+        style="color:blue;">{{title}}</span></h3>
     <div class="row">
         {% for article in articles %}
-        <div class="col-md-4 col-xl-3 col-sm-6">
-            <div class="card"style="background-color:white;margin-left:10px">
-                <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap" style="width:50px;height:30px;">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card"style="background-color:white;margin-left:10px;margin-bottom:10px">
+                <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap" style="width:310px;height:200px;">
                 <div class="card-body">
                     <h5 class="card-title titles">{{article.title}}</h5>
                     <p class="card-title">{{article.description|truncate(100)}}</p>
-                    <h5 class="card-title">By: {{article.author}}</h5>
-                    <h5 class="card-title">Published on: {{article.publishedAt}}</h5>
-                    <a href="{{article.url}}" class="read-article">Read from Source</a>
+                    <h5 class="card-text authoring">By: {{article.author}}</h5>
+                    <h5 class="card-text authoring">Published on: {{article.publishedAt}}</h5>
+                    <a href="{{article.url}}">Read from Source</a>
                 </div>
             </div>
         </div>
